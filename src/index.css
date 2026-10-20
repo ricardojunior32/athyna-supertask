@@ -1,0 +1,149 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-*: initial;
+  --color-white: #fff;
+  --color-black: #000;
+
+  --color-background: #f8f5f2;
+  --color-foreground: #1c1e1b;
+  --color-mint: #6cd7ae;
+  --color-light-purple: #a08cff;
+  --color-purple: #6e35cb;
+
+  --color-primary-1: hsl(240 100% 99.4%);
+  --color-primary-2: hsl(249 100% 98.6%);
+  --color-primary-3: hsl(248 100% 97.1%);
+  --color-primary-4: hsl(249 100% 94.7%);
+  --color-primary-5: hsl(248 100% 92.4%);
+  --color-primary-6: hsl(249 100% 89.2%);
+  --color-primary-7: hsl(249 100% 84.9%);
+  --color-primary-8: hsl(251 100% 78.8%);
+  --color-primary-9: hsl(250 100% 77.5%);
+  --color-primary-10: hsl(251 81.4% 72.5%);
+  --color-primary-11: hsl(254 44.5% 52%);
+  --color-primary-12: hsl(257 60.9% 27.1%);
+
+  --color-neutral-1: hsl(240 20% 99%);
+  --color-neutral-2: hsl(240 20% 98%);
+  --color-neutral-3: hsl(240 11.1% 94.7%);
+  --color-neutral-4: hsl(240 9.5% 91.8%);
+  --color-neutral-5: hsl(230 10.7% 89%);
+  --color-neutral-6: hsl(240 10.1% 86.5%);
+  --color-neutral-7: hsl(233 9.9% 82.2%);
+  --color-neutral-8: hsl(231 10.2% 75.1%);
+  --color-neutral-9: hsl(231 5.9% 57.1%);
+  --color-neutral-10: hsl(226 5.4% 52.7%);
+  --color-neutral-11: hsl(220 5.9% 40%);
+  --color-neutral-12: hsl(210 12.5% 12.5%);
+
+  --color-error-3: hsl(357 90.5% 95.9%);
+  --color-error-11: hsl(358 64.8% 49%);
+
+  --color-whatsapp: #25d366;
+  --color-facebook: #1877f2;
+  --color-linkedin: #0a66c2;
+  --color-telegram: #229ed9;
+
+  --font-sans: 'Lexend Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: 'Prata', ui-serif, Georgia, serif;
+
+  --container-page: 90rem;
+  --container-results: 100rem;
+  --container-article: 53.75rem;
+  --container-detail: 79.75rem;
+
+  --shadow-input: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+  --shadow-hard: 4px 4px 0 0 var(--color-foreground);
+  --shadow-popover: 0 10px 38px -10px rgb(22 23 24 / 0.35), 0 10px 20px -15px rgb(22 23 24 / 0.2);
+  --shadow-glass:
+    0 8px 28px rgb(0 0 0 / 0.18), inset 0 1px 0 rgb(255 255 255 / 0.55),
+    inset 0 -1px 0 rgb(0 0 0 / 0.06);
+
+  --animate-caret: caret 1s steps(1) infinite;
+  --animate-pop-in: pop-in 0.25s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
+
+  --animate-pop-out: pop-out 0.2s ease-in forwards;
+
+  @keyframes pop-in {
+    from {
+      opacity: 0;
+      transform: translateY(6px) scale(0.94);
+    }
+  }
+
+  @keyframes pop-out {
+    to {
+      opacity: 0;
+      transform: translateY(6px) scale(0.94);
+    }
+  }
+
+  @keyframes caret {
+    50% {
+      opacity: 0;
+    }
+  }
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+    scroll-padding-top: 5.5rem;
+  }
+
+  html:has(dialog:modal) {
+    overflow: hidden;
+  }
+
+  body {
+    @apply bg-background font-sans text-foreground antialiased;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-purple);
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .job-description {
+    @apply text-base leading-6 break-words;
+  }
+
+  .job-description :is(h2, h3, h4) {
+    @apply mt-6 mb-2 text-lg font-bold;
+  }
+
+  .job-description > :first-child {
+    @apply mt-0;
+  }
+
+  .job-description p {
+    @apply mb-3;
+  }
+
+  .job-description :is(ul, ol) {
+    @apply mb-3 pl-5;
+  }
+
+  .job-description ul {
+    @apply list-disc;
+  }
+
+  .job-description ol {
+    @apply list-decimal;
+  }
+
+  .job-description li {
+    @apply mb-1;
+  }
+
+  .job-description a {
+    @apply underline;
+  }
+
+  .job-description strong {
+    @apply font-bold;
+  }
+}
