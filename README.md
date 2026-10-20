@@ -17,6 +17,10 @@ them, and it would spend the time budget on decisions the data never asked for.
 - [PR_REVIEW.md](PR_REVIEW.md): the "Back to jobs" review (Exercise 3)
 - [AI_USAGE.md](AI_USAGE.md): how AI was used
 
+## Live demo
+
+https://athyna-supertask-nmx7.vercel.app/
+
 ## Recording
 
 _Link to be added._

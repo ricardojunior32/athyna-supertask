@@ -5,7 +5,7 @@ import { JOBS_PATH } from '../constants/routes'
 import { useDocumentTitle } from '../hooks/useDocumentTitle'
 
 export const AdminPage = () => {
-  useDocumentTitle('Admin panel (demo)')
+  useDocumentTitle('Admin panel')
 
   return (
     <div className="mx-auto flex w-full max-w-page flex-col gap-6 px-6">
