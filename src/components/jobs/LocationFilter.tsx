@@ -1,5 +1,5 @@
 import { MapPin } from 'lucide-react'
-import { COUNTRIES, LOCATION_HINT, REGIONS } from '../../constants/locations'
+import { COUNTRIES, REGIONS } from '../../constants/locations'
 import {
   groupLocations,
   regionSelection,

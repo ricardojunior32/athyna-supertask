@@ -1,5 +1,4 @@
 import { Code } from 'lucide-react'
-import { SKILLS_HINT } from '../../constants/search'
 import type { SkillsFilterProps } from '../../types/components/jobs'
 import { TechSkill } from '../../types/skills'
 import { CheckboxOption } from '../ui/CheckboxOption'
