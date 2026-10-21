@@ -156,7 +156,7 @@ profiles, names or emails. Each visitor is an anonymous ID.
 ### Simulated data
 
 Real traffic from testing is a handful of sessions, so the dashboard also holds **simulated
-data**, sent by [scripts/seed-posthog.mjs](scripts/seed-posthog.mjs).
+data**
 
 - Rates start from the brief's figures (61% mobile traffic, 8% mobile and 24% desktop conversion,
   43% direct arrivals, 24% of users filtering and converting 3x) with random variation per user.
@@ -242,17 +242,9 @@ which the API does not accept as a filter (400 error).
 - **The country is read from `locality` in the browser.** [`parseCountry`](src/lib/location.ts)
   matches country names, spellings, big cities, US states and codes like `OH` or `GB:`. On the
   1,000 most recent jobs it places 88%; most of the rest are "Remote" or countries outside the list.
-- **One request at a time, only when asked.** With a location (or skill) selected the list is
-  fetched in pages of 50 (the API maximum) and filtered locally. "Load more jobs" fetches one more
-  page per click, up to 4 pages, after which the usual login CTA takes over. There are no parallel
-  or automatic requests.
 - **Counts in analytics stay separate.** The heading shows the jobs found so far, and
   `jobs_searched` carries `results_partial: true` so these counts are not mixed with real totals in
   PostHog.
-
-Limits: common locations (US, UK, India, Europe) fill the first page; rare countries often need the
-extra pages or come back empty, which the empty state says. Jobs whose location cannot be read are
-left out when a location is selected.
 
 The fix in the backend: parse `locality` into an ISO country at ingestion, fill `country`, and let
 it take several values or a region. Then `parseCountry` moves there, and the filter becomes a normal
