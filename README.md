@@ -23,7 +23,7 @@ https://athyna-supertask-nmx7.vercel.app/
 
 ## Recording
 
-_Link to be added._
+https://youtu.be/gE6rd1BIZ8E
 
 ## Setup
 
@@ -162,6 +162,8 @@ data**, sent by [scripts/seed-posthog.mjs](scripts/seed-posthog.mjs).
   43% direct arrivals, 24% of users filtering and converting 3x) with random variation per user.
   The other rates, such as 15% click-through on similar jobs, are assumptions made only to give
   those events some volume.
+- Sharing and job alerts came after the first batches, so `--backfill` adds them to the users of
+  those batches, right after the last job each one viewed (`seed_batch: v1-v2-backfill`).
 - Every simulated event carries `is_synthetic: true` and `seed_batch`, and its `distinct_id` starts
   with `seed-`, so it can always be filtered out.
 - It shows that the events, the funnels and the dashboard work end to end. **It does not show
